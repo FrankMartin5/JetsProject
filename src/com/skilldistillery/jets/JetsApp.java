@@ -1,9 +1,15 @@
 package com.skilldistillery.jets;
 
-public class JetsApp {
+import java.util.Scanner;
 
+public class JetsApp {
+	
+	private AirField airField = new AirField();
+	
+	Scanner kb = new Scanner(System.in);
+	
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
+		JetsApp ja = new JetsApp();
 
 	}
 
