@@ -52,5 +52,10 @@ public class AirField {
 	public void listFleet() {
 		System.out.println("Fleet: "+jets.toString());
 	}
+	public void fly() {
+		for (Jet jet : jets) {
+			jet.fly();
+		}
+	}
 	}
 
