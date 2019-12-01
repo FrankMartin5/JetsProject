@@ -49,5 +49,8 @@ public class AirField {
 		scanForJet();
 		return jets;
 	}
+	public void listFleet() {
+		System.out.println("Fleet: "+jets.toString());
+	}
 	}
 
