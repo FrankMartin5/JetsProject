@@ -10,8 +10,7 @@ import java.util.List;
 public class AirField {
 	// F i e l d
 	private List<Jet> jets = new ArrayList<>();
-		String jetList = "Jets.txt";
-		
+	String jetList = "Jets.txt";
 
 	private void scanForJet() {
 		try {
@@ -35,27 +34,66 @@ public class AirField {
 			}
 			br.close();
 		} catch (FileNotFoundException e) {
-			System.err.println("Invalid filename: "+ e.getMessage());
+			System.err.println("Invalid filename: " + e.getMessage());
 			return;
-		}
-		catch (IOException e) {
-			System.err.println("Problem while reading "+ jetList +": " + e.getMessage());
+		} catch (IOException e) {
+			System.err.println("Problem while reading " + jetList + ": " + e.getMessage());
 			return;
 		}
 		System.out.println(jetList);
-		
+
 	}
-	public List<Jet> scanForJets(){
+
+	public List<Jet> scanForJets() {
 		scanForJet();
 		return jets;
 	}
+
 	public void listFleet() {
-		System.out.println("Fleet: "+jets.toString());
+		System.out.println("Fleet: " + jets.toString());
 	}
+
 	public void fly() {
 		for (Jet jet : jets) {
 			jet.fly();
 		}
 	}
-	}
 
+	public String viewFastestJet() {
+		double fast = 0;
+		String fastest = "";
+		for (Jet jet : jets) {
+			if (jet.getSpeed() > fast) {
+				fast = jet.getSpeed();
+				fastest = jet.toString();
+			}
+		}
+		return fastest;
+	}
+	public String viewLongestRange() {
+		int vLongest = 0;
+		String vLongestRange = "";
+		for (Jet jet : jets) {
+			if (jet.getRange() > vLongest) {
+				vLongest = jet.getRange();
+				vLongestRange = jet.toString();
+			}
+		}
+		return vLongestRange;
+	}
+	public void loadCargo() {
+		for (Jet jet : jets) {
+			if (jet instanceof CargoCarrier) {
+				((CargoCarrier) jet).loadCargo();
+			}
+		}
+	}
+	public void dogFight() {
+		for (Jet jet : jets) {
+			if (jet instanceof CombatReady) {
+				((CombatReady) jet).fight();
+			}
+		}
+	}
+	
+}
