@@ -19,9 +19,10 @@ public abstract class Jet {
 	
 // M e t h o d s
 	public void fly() {
-		System.out.println(model + " is flying around at " + speed + " mph");
+//		System.out.println(model + " is flying around at " + speed + " mph ");
 		double travel = getRange() / getSpeed();
-		System.out.printf("The jet will land in "+"%.2f",travel);
+		System.out.printf("The " +model+ " will land in "+"%.2f",travel);
+		System.out.println();
 	}
 
 
