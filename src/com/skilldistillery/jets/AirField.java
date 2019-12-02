@@ -160,7 +160,6 @@ public class AirField {
 		}
 		System.out.println("Select a number from 1 - " + (i - 1) + " to remove that jet.");
 		jetRemoval = kb.nextInt();
-		kb.nextLine();
 		removedJet = jets.remove(jetRemoval - 1);
 		System.out.println(removedJet.getModel() + " has been removed");
 	}
