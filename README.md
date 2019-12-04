@@ -15,5 +15,9 @@
 + ListArrays and List
 + Interfaces
 
+## Technologies Used
++ Java 8
++ Eclipse
+
 ##  Lessons Learned
 + Learned how to use a txt file containing information and implement it in my program. This project also enforced the understanding of Object Oriented programming for me.
